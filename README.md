@@ -4,14 +4,14 @@
 Use a nerual network to predict the state of a traffic lights, e.g. "red", "yellow", "green", "off"
 
 
-#### Current accuracy:
+#### 1. Current accuracy:
 
 94.2% at Bosch dataset, Udacity simular and udacity car dataset.
 
 
 
 
-#### The state definition of the traffic lights are as follow:
+##### The state definition of the traffic lights are as follow:
 
 | Traffic light state 	| red 	| yellow 	| green 	| off 	|
 |:-------------------:	|:---:	|:------:	|:-----:	|:---:	|
@@ -19,7 +19,7 @@ Use a nerual network to predict the state of a traffic lights, e.g. "red", "yell
 
 
 
-#### How to run the demo
+#### 2. How to run the code
 
 ```sh
 
@@ -27,7 +27,7 @@ python main.py
 
 ```
 
-#### How to run with one example
+#### 3. How to run with one example input
 
 ![alt text][green]
 
@@ -43,4 +43,11 @@ Predicted state of the traffic light:
 green
 ```
 
+#### 4. Network Architect
+
+A very simple network is used here:
+
+![alt text][network]
+
 [green]: ./data/green.jpg
+[network]: ./data/network.png
