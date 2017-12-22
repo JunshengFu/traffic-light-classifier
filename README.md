@@ -27,17 +27,20 @@ python main.py
 
 ```
 
-#### How to run with your own image
+#### How to run with one example
 
 ![alt text][green]
 
+Use the code in the `main.py`
 ```sh
     file_path = './data/green.jpg'
     predicted_state = test_an_image(file_path, model=load_model('model.h5'))
 ```
 
+Predicted state of the traffic light:
+
 ```sh
-Output: green
+green
 ```
 
 [green]: ./data/green.jpg
