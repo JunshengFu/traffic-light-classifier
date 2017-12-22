@@ -43,7 +43,7 @@ Predicted state of the traffic light:
 green
 ```
 
-#### 4. Network Architect
+#### 4. Network Architecture
 
 A very simple network is used here:
 
