@@ -1,5 +1,6 @@
 import pickle
 import numpy as np
+import cv2
 from keras.models import Sequential
 from keras.layers.core import Dense, Activation, Flatten
 from keras.layers.convolutional import Convolution2D
@@ -64,13 +65,42 @@ def test(file_path, model):
         print('{}: {}'.format(metric_name, metric_value))
 
 
+def test_an_image(file_path, model):
+    """
+    resize the input image to [32, 32, 3], then feed it into the NN for prediction
+    :param file_path:
+    :return:
+    """
+
+    desired_dim=(32,32)
+    img = cv2.imread(file_path)
+    img_resized = cv2.resize(img, desired_dim, interpolation=cv2.INTER_LINEAR)
+    img_ = np.expand_dims(np.array(img_resized), axis=0)
+
+    predicted_state = model.predict_classes(img_)
+
+    return predicted_state
+
+
 if __name__ == "__main__":
     model = network()
     train_file = "./data/bosch_udacity_train.p"
     test_file = "./data/bosch_udacity_test.p"
 
-    # train the network
+    # Train the network
     train(train_file, model)
 
-    # test the network
+    # Test the network
     test(test_file, model=load_model('model.h5'))
+
+    #---Test with a single image---#
+    demo_flag = True
+    file_path = './data/green.jpg'
+    states = ['red', 'yellow', 'green', 'off']
+    if demo_flag:
+        predicted_state = test_an_image(file_path, model=load_model('model.h5'))
+        for idx in predicted_state:
+            print(states[idx])
+
+
+

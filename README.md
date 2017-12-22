@@ -19,10 +19,12 @@ Use a nerual network to predict the state of a traffic lights, e.g. "red", "yell
 
 
 
-#### How to run the code
+#### How to run the demo
 
 ```sh
 
 python main.py
 
 ```
+
+#### How to run with your own image
