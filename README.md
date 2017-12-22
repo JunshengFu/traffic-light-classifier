@@ -28,3 +28,16 @@ python main.py
 ```
 
 #### How to run with your own image
+
+![alt text][green]
+
+```sh
+    file_path = './data/green.jpg'
+    predicted_state = test_an_image(file_path, model=load_model('model.h5'))
+```
+
+```sh
+Output: green
+```
+
+[green]: ./data/green.jpg
