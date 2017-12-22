@@ -27,7 +27,7 @@ python main.py
 
 ```
 
-#### 3. How to run with one example input
+#### 3. How to run with one example
 
 ![alt text][green]
 
