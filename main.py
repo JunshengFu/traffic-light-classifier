@@ -40,7 +40,7 @@ def train(file_path, model):
 
     model.summary()
     model.compile('adam', 'categorical_crossentropy', ['accuracy'])
-    history = model.fit(X_normalized, y_one_hot, nb_epoch=20, validation_split=0.2)
+    history = model.fit(X_normalized, y_one_hot, epochs=20, validation_split=0.2)
 
     model.save('model.h5')
     return history
@@ -77,7 +77,8 @@ def test_an_image(file_path, model):
     img_resized = cv2.resize(img, desired_dim, interpolation=cv2.INTER_LINEAR)
     img_ = np.expand_dims(np.array(img_resized), axis=0)
 
-    predicted_state = model.predict_classes(img_)
+    tmp_state = model.predict(img_)
+    predicted_state = tmp_state.argmax(axis=-1)
 
     return predicted_state
 
